@@ -16,7 +16,9 @@ export default function HomeNav() {
 
       <div className="flex items-center gap-4">
         <Link to="/auth/login">
-          <p className={` font-medium text-neutral-800`}>Login</p>
+          <p className={` font-medium text-neutral-800 hidden sm:block`}>
+            Login
+          </p>
         </Link>
 
         <Link to="/auth/signup">
