@@ -50,7 +50,7 @@ export default function SignupForm() {
   }
 
   return (
-    <Card className=" max-w-[400px] mx-auto w-full">
+    <Card className=" max-w-[400px] mx-auto w-full border-0 shadow-none">
       <CardHeader>
         <CardTitle>Create an Account</CardTitle>
         <CardDescription>Get started with TicketFlow today</CardDescription>
