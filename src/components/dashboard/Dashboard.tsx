@@ -1,3 +1,5 @@
+import { useAppSelector } from "@/lib/redux/hooks";
+import { getTicket } from "@/lib/redux/tickets/ticketSlice";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { getUser } from "../../utils/getUser";
@@ -10,14 +12,36 @@ import {
   CardTitle,
 } from "../ui/card";
 
+type Status = "open" | "in_progress" | "closed";
 export default function Dashboard() {
   const user = getUser();
 
+  const { tickets } = useAppSelector(getTicket);
+
+  const numberofTicketsByStatus = (status: Status) =>
+    tickets.reduce(
+      (acc, curTicket) => (curTicket.status === status ? acc + 1 : acc),
+      0
+    );
+
+  const totalTickets = tickets.length;
+  const openTickets = numberofTicketsByStatus("open");
+  const inProgressTickets = numberofTicketsByStatus("in_progress");
+  const closedTickets = numberofTicketsByStatus("closed");
+
   const overviewData = [
-    { name: "total tickets", desc: "All time tickets created", count: 0 },
-    { name: "Open tickets", desc: "Waiting to be started", count: 0 },
-    { name: "In Progress", desc: "Currently being worked on", count: 0 },
-    { name: "Resolved", desc: "Successfully completed", count: 0 },
+    {
+      name: "total tickets",
+      desc: "All time tickets created",
+      count: totalTickets,
+    },
+    { name: "Open tickets", desc: "Waiting to be started", count: openTickets },
+    {
+      name: "In Progress",
+      desc: "Currently being worked on",
+      count: inProgressTickets,
+    },
+    { name: "Closed", desc: "Successfully completed", count: closedTickets },
   ];
 
   return (
@@ -30,7 +54,7 @@ export default function Dashboard() {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2 mt-4">
+        <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-4">
           {overviewData?.map((data) => (
             <Card className="flex items-center gap-4 flex-row  justify-between pr-6">
               <CardHeader className="w-full">

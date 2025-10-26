@@ -5,7 +5,7 @@ import { getUser } from "../utils/getUser";
 
 export default function AppLayout() {
   return (
-    <div className=" min-h-screen  flex flex-col">
+    <div className=" min-h-screen  flex flex-col max-w-[1440px] mx-auto">
       <header>
         <DashboardNavbar />
       </header>
