@@ -4,7 +4,7 @@ import { getUser } from "../utils/getUser";
 
 export default function AuthLayout() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col max-w-[1440px] mx-auto">
       <AuthNavbar />
       <Outlet />
     </div>
