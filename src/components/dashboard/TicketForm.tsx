@@ -145,7 +145,7 @@ export default function TicketForm() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ ease: "easeIn", duration: 0.1 }}
-          className="w-screen h-screen bg-black/20 backdrop-blur-xs fixed top-0 flex items-center justify-center"
+          className="w-screen h-screen bg-black/20 backdrop-blur-xs fixed top-0 flex items-center justify-center px-5"
           onClick={(e) => onCloseModal(e)}
         >
           <Card
