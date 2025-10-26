@@ -15,8 +15,8 @@ export default function Why() {
           <CardTitle className="text-3xl font-bold text-neutral-800 md:text-[33px]">
             Why Choose TicketFlow?
           </CardTitle>
-          <CardDescription className="text-lg text-neutral-600 mt-2">
-            Everything you need to manage tickets efficiently and effectively
+          <CardDescription className="text-lg text-neutral-700 mt-2">
+            Everything you need to manage tickets efficiently and effectively.
           </CardDescription>
         </CardHeader>
 
