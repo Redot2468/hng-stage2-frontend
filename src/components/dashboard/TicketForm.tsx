@@ -1,3 +1,4 @@
+import { getUser } from "@/utils/getUser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
@@ -44,6 +45,7 @@ import { Textarea } from "../ui/textarea";
 // clear landing page.
 
 export default function TicketForm() {
+  const user = getUser();
   const { isTicketModalOpen } = useAppSelector(getTicket);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -62,6 +64,7 @@ export default function TicketForm() {
     const newTicket = {
       id: crypto.randomUUID(),
       ...formData,
+      userId: user?.id,
     };
 
     const tickets: TicketType[] = JSON.parse(
@@ -75,7 +78,12 @@ export default function TicketForm() {
 
       localStorage.setItem("tickets", JSON.stringify(updateTickets));
 
-      dispatch(onUpdateTicket({ ticketToEditId, formData }));
+      dispatch(
+        onUpdateTicket({
+          ticketToEditId,
+          formData: { ...formData, userId: user?.id },
+        })
+      );
 
       toast.success("Ticket successfully updated");
       form.reset({

@@ -128,7 +128,7 @@ export default function LoginForm() {
         <CardDescription>
           Don&apos;t have an account?{" "}
           <Link to="/auth/signup">
-            <span className="text-blue-700 font-semibold">Login</span>
+            <span className="text-blue-700 font-semibold">Sign up</span>
           </Link>
         </CardDescription>
       </CardFooter>

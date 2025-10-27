@@ -43,6 +43,15 @@ export default function SignupForm() {
 
     const usersData: (typeof newUser)[] = JSON.parse(usersFromLs ?? "[]");
 
+    const existingUser = usersData.some(
+      (user) => user?.email === newUser.email
+    );
+
+    if (existingUser) {
+      toast.error("Account already exists, Please login");
+      return;
+    }
+
     localStorage.setItem("users", JSON.stringify([...usersData, newUser]));
 
     toast.success("Account created successfully! You can now log in.");
