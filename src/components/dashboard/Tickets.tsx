@@ -1,12 +1,9 @@
 import { Plus } from "lucide-react";
-import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../lib/redux/hooks";
 import {
   getTicket,
-  onAddTicketsOnMount,
   onToggleTicketModal,
 } from "../../lib/redux/tickets/ticketSlice";
-import type { TicketType } from "../../types/tickets-types";
 import { Button } from "../ui/button";
 import {
   Card,
@@ -24,13 +21,6 @@ export default function Tickets() {
   const { tickets } = useAppSelector(getTicket);
 
   const onCreateTicket = () => dispatch(onToggleTicketModal(true));
-
-  useEffect(() => {
-    const ticketData: TicketType[] = JSON.parse(
-      localStorage.getItem("tickets") ?? "[]"
-    );
-    dispatch(onAddTicketsOnMount(ticketData));
-  }, [dispatch]);
 
   return (
     <div className="py-2 pb-12">
