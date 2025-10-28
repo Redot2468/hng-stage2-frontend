@@ -13,7 +13,7 @@ export default function Why() {
       <Card className="border-0 shadow-none">
         <CardHeader className="text-center">
           <CardTitle className="text-3xl font-bold text-neutral-800 md:text-[33px]">
-            Why Choose TicketFlow?
+            Why Choose TicketMS?
           </CardTitle>
           <CardDescription className="text-lg text-neutral-700 mt-2">
             Everything you need to manage tickets efficiently and effectively.

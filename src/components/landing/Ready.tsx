@@ -13,8 +13,8 @@ export default function Ready() {
               Ready to manage your tickets?
             </h2>
             <p className="text-neutral-600 text-lg mt-2">
-              Join thousands of teams already using TicketFlow to streamline
-              their support operations.
+              Join thousands of teams already using TicketMS to streamline their
+              support operations.
             </p>
 
             <Link to="/auth/signup">

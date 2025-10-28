@@ -17,7 +17,7 @@ export const WHY_TEXT = [
     logo: Edit,
     title: "Customizable Workflows",
     description:
-      "Adapt TicketFlow to fit your team's unique processes with flexible workflow configurations and automation options.",
+      "Adapt TicketMS to fit your team's unique processes with flexible workflow configurations and automation options.",
     color: "bg-amber-700",
   },
   {

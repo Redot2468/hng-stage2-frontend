@@ -11,7 +11,7 @@ export default function HomeNav() {
     >
       <div className="flex items-center gap-4">
         <img src="/logo-1.png" alt="" className="size-[30px]" />
-        <h1 className="text-xl text-neutral-800">TicketFlow</h1>
+        <h1 className="text-xl text-neutral-800">TicketMS</h1>
       </div>
 
       <div className="flex items-center gap-4">
